@@ -1,24 +1,44 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import { Slot } from 'expo-router';
+import { View, Text, StyleSheet, StatusBar } from 'react-native';
+import { Colors } from '../constants/Colors'; // Ajusta la ruta según donde tengas tus colores
 
-import { useColorScheme } from '@/hooks/use-color-scheme';
+const Layout = () => {
+    return (
+        <View style={styles.container}>
+            {/* Parte superior VERDE */}
+            <View style={styles.header}>
+                <Text style={styles.title}>Layout</Text>
+                <StatusBar style="light" />            
+            </View>
+            
+            {/* Parte inferior con color background */}
+            <View style={styles.content}>
+                <Slot />
 
-export const unstable_settings = {
-  anchor: '(tabs)',
+            </View>
+        </View>
+    );
 };
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    header: {
+        backgroundColor: Colors.orange, // #34C759
+        padding: 20,
+        paddingTop: 50,
+    },
+    content: {
+        flex: 1,
+        backgroundColor: Colors.background, // #000000 (negro)
+    },
+    title: {
+        color: Colors.textPrimary, // 'white'
+        fontSize: 20,
+        fontWeight: 'bold',
+    }
+    
+});
 
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
-  );
-}
+export default Layout;
