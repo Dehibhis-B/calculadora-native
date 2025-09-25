@@ -6,8 +6,6 @@ interface Props extends TextProps {
     variant?: 'h1' | 'h2';
 }
 
-
-
 const ThemeText = ({ children, variant = 'h1' ,  ...dehibhis }: Props) => {
     return ( 
           

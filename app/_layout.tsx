@@ -1,13 +1,20 @@
+import { View, Text, StyleSheet } from 'react-native';
+
 import { Slot } from 'expo-router';
-import { View, Text, StyleSheet, StatusBar } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import * as NavigationBar from 'expo-navigation-bar';
+
+
 import { Colors } from '../constants/Colors'; // Ajusta la ruta según donde tengas tus colores
+
+
 
 const Layout = () => {
     return (
         <View style={styles.container}>
             {/* Parte superior VERDE */}
             <View style={styles.header}>
-                <Text style={styles.title}>Layouts</Text>
+                <Text style={styles.title}>Calculadora Apple</Text>
                 <StatusBar style="light" />            
             </View>
             
