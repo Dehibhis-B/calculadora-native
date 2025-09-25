@@ -7,14 +7,13 @@ const Layout = () => {
         <View style={styles.container}>
             {/* Parte superior VERDE */}
             <View style={styles.header}>
-                <Text style={styles.title}>Layout</Text>
+                <Text style={styles.title}>Layouts</Text>
                 <StatusBar style="light" />            
             </View>
             
             {/* Parte inferior con color background */}
             <View style={styles.content}>
                 <Slot />
-
             </View>
         </View>
     );
