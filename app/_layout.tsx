@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Platform } from 'react-native';
 
 import { Slot } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
@@ -6,6 +6,12 @@ import * as NavigationBar from 'expo-navigation-bar';
 
 
 import { Colors } from '../constants/Colors'; // Ajusta la ruta según donde tengas tus colores
+
+const isAndroid = Platform.OS ==='android';
+
+if (isAndroid){
+    NavigationBar.setBackgroundColorAsync('black')
+}
 
 
 
