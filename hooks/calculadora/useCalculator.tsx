@@ -53,6 +53,7 @@ export const useCalculator = () => {
     }
 
     const setLastNumber = () => {
+        calculateResult();  // ← Asegura que el resultado esté actualizado
         // Remover punto decimal final si existe
         const finalNumber = number.endsWith('.') ? number.slice(0, -1) : number;
         setPrevNumber(finalNumber);
