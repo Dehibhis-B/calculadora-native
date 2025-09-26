@@ -6,8 +6,6 @@ import { Colors } from '@/constants/Colors';
 import { globalStyles } from '@/styles/global-styles';
 
 
-
-
 interface Props {
     label: string;
     color: string;
